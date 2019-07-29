@@ -6,9 +6,10 @@ import store, {UPDATE_RECIPE_NAME, UPDATE_RECIPE_CATEG} from '../../store'
 class Name extends Component {
   constructor(props) {
     super(props);
+    const reduxState = store.getState()
     this.state = {
-      name: '',
-      category: ''
+      name: reduxState.recipeName,
+      category: reduxState.recipeCategory
     };
   }
   handleNameChange(nameVal) {
